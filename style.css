@@ -1,0 +1,36 @@
+/*DESKTOP*/
+@media screen and (min-width: 480px) {
+    .border-3 {
+    display: none;
+    }
+    .row-h {
+        margin: 20px;
+    }
+    .btn-h {
+        max-width: 10%;
+    }
+}
+
+/*MOBILE*/
+@media screen and (max-width: 480px) {
+    .card {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/**************************************/
+body {
+    background-color: lightblue;
+}
+.navbar {
+    background-color: rgb(173, 196, 230);
+}
+
+header {
+    margin: 50px auto;
+}
+
+.btn-y {
+    margin: 10px 0;
+}
