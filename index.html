@@ -122,18 +122,21 @@
         </div>
     </footer>
 
+    <button onclick="netlifyIdentity.open()">Login test</button>
     
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.location.hash.includes("recovery_token")) {
-    netlifyIdentity.on("init", user => {
-      if (!user) {
-        netlifyIdentity.resetPassword();
-      }
-    });
-    netlifyIdentity.init();
-  }
-</script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        // Inizializza sempre Netlify Identity
+        netlifyIdentity.init();
+
+        // Se c'è un recovery_token nella URL, avvia il flusso di reset password
+        if (window.location.hash.includes("recovery_token")) {
+            netlifyIdentity.on("init", () => {
+            netlifyIdentity.resetPassword();
+            });
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </body>
